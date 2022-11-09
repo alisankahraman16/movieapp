@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# film modelleri
 class Movie(models.Model):
     movieid = models.CharField(max_length=20, primary_key=True,verbose_name="Film İsmi")
     title = models.CharField(max_length=30,verbose_name="Başlık")
