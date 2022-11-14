@@ -6,4 +6,11 @@
 <h3>Giriş Yap</h3>
 <hr>
 
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <br>
+    
+</form>
+
 {% endblock body %}
