@@ -1,0 +1,13 @@
+
+{% extends "layout.html" %}
+{% block body %}
+
+<h3>Kayıt ol </h3>
+<hr>
+
+<form  method="post">
+    {% csrf_token %}
+    {{form.as_p}} <br>
+    <button type="submit" class="btn align-content-md-between">Kayıt Ol</button>
+</form>
+{% endblock body %}

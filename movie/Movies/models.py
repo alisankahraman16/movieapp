@@ -14,3 +14,13 @@ class Movie(models.Model):
     trailer = models.URLField(default='',verbose_name="Fragman")
     def __str__(self):
         return self.movieid + '|' + self.title
+
+
+class Actor(models.Model):
+    actorid = models.CharField(max_length=20, primary_key=True)
+    name = models.CharField(max_length=30)
+    photo = models.URLField()
+
+    def __str__(self):
+        return self.actorid + '|' + self.name
+
