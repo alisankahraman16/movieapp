@@ -9,21 +9,36 @@
           <a class="nav-link" href="#">Anasayfa <span class="sr-only">(current)</span></a>  
         </li>
         
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#">Hakkımızda</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#">Filmler</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="#">Diziler</a>
         </li>
       </ul>
-      <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Arama" aria-label="Arama">
-        <button class="btn btn-outline-dark" type="submit">Arama</button>
-      </form>
+      <ul class="navbar-nav ml-auto">
+      {% if request.user.is_authenticated %}
+          <li class="nav-item active">
+            <a class="nav-link" href="movies/dashboard">Kontrol Paneli</a>
+          </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="user/logout">Çıkış Yap</a>
+            </li>
+          
+      {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="user/login">Giriş Yap</a>
+        </li>
+      {% endif %}
+        <li class="nav-item active">
+          <a class="nav-link" href="user/register">Kayıt ol</a>
+        </li>
+      </ul>
+      
     </div>
   </nav>
