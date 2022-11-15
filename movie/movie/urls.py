@@ -21,8 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name="index"),
     path('about/',views.about,name="about"),
-    path('base/',views.base,name="base"),
-    path('user/', include("user.urls")),
+    path('user/', include("user.urls")), 
+    
     #user/register user/login veya böyle bir url geldiginde 
 
 ]
