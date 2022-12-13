@@ -75,6 +75,12 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 
+class Comment(models.Model):
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField(),
+    text = models.TextField(max_length=500)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="comments")
+
 class Video(models.Model):
     title = models.CharField(max_length=200)
     url = models.CharField(max_length=200)
