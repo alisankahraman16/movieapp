@@ -62,5 +62,6 @@ def movie_details(request, slug):
         "genres": movie.genres.all(),
         "people": movie.people.all(),
         "videos": movie.video_set.all(),
+        "comments": movie.comments.all().order_by("-date_added"),
         "comment_form": comment_form,
     })

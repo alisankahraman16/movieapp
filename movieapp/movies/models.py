@@ -81,6 +81,7 @@ class Comment(models.Model):
     email = models.EmailField(default=" ")
     text = models.TextField(max_length=500)
     rating = models.IntegerField(null=True)
+    date_added = models.DateTimeField(null=True, auto_now=True)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="comments")
 
 class Video(models.Model):
