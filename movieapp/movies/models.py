@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
+from django.db import models
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Genre(models.Model):
@@ -54,9 +56,9 @@ class Person(models.Model):
 
 class Movie(models.Model):
     title = models.CharField("Başlık",max_length=100)
-    description = models.TextField("Özet",validators= [MinLengthValidator(20)])
-    image_name = models.CharField("Resim",max_length=50)
-    image_cover = models.CharField(max_length=50)
+    description = RichTextField()
+    image_name = models.ImageField(upload_to="movies")
+    image_cover = models.ImageField(upload_to="movies")
     date = models.DateField(auto_now=True)
     slug = models.SlugField(unique=True, db_index=True)
     budget = models.DecimalField(max_digits=19, decimal_places=2)
