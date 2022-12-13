@@ -2,7 +2,10 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from datetime import date
 from movies.models import Movie
-from movies.models import Person
+from movies.forms import CommentForm
+from django.http.response import HttpResponseRedirect
+from django.urls import reverse
+
 data = {
 
     "sliders": [
@@ -42,10 +45,22 @@ def movies(request):
 
 def movie_details(request, slug):    
     movie = get_object_or_404(Movie, slug=slug)
+    comment_form = CommentForm()
+
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.movie = movie
+            comment.save()
+            return HttpResponseRedirect(reverse("movie_details", args=[slug]))
+    movie = get_object_or_404(Movie, slug=slug)
+    
 
     return render(request, 'movie_details.html',{
         "movie": movie,
         "genres": movie.genres.all(),
         "people": movie.people.all(),
         "videos": movie.video_set.all(),
+        "comment_form": comment_form,
     })
