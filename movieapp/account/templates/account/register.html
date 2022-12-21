@@ -25,63 +25,41 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Kayıt Ol!</h1>
             </div>
-            <form class="user">
+            <form class="user" method="POST" novalidate>                 
+              {% csrf_token %}
+              <ul class="errorlist">
+                {% for error in form.non_field_errors %}                      
+                  <li>
+                    {{ error }}
+                  </li>                    
+                {% endfor %}
+              </ul>
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input
-                    type="text"
-                    class="form-control form-control-user"
-                    id="exampleFirstName"
-                    placeholder="Ad"
-                  />
+                  {{ form.first_name.errors }}
+                  {{ form.first_name}}
                 </div>
                 <div class="col-sm-6">
-                  <input
-                    type="text"
-                    class="form-control form-control-user"
-                    id="exampleLastName"
-                    placeholder="Soyad"
-                  />
+                  {{ form.last_name.errors }}
+                  {{ form.last_name}}
                 </div>
               </div>
               <div class="form-group">
-                <input
-                  type="email"
-                  class="form-control form-control-user"
-                  id="exampleInputEmail"
-                  placeholder="Email Address"
-                />
+                {{ form.email.errors }}
+                {{ form.email}}
               </div>
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input
-                    type="password"
-                    class="form-control form-control-user"
-                    id="exampleInputPassword"
-                    placeholder="Password"
-                  />
+                  {{ form.password1.errors }}
+                  {{ form.password1}}
                 </div>
                 <div class="col-sm-6">
-                  <input
-                    type="password"
-                    class="form-control form-control-user"
-                    id="exampleRepeatPassword"
-                    placeholder="Repeat Password"
-                  />
+                  {{ form.password2.errors }}
+                  {{ form.password2}}
                 </div>
               </div>
-              <a href="login.html" class="btn btn-primary btn-user btn-block">
-                Kayıt Ol
-              </a>
-              <hr />
-              <a href="index.html" class="btn btn-google btn-user btn-block">
-                <i class="fab fa-google fa-fw"></i> Google ile Kayıt Ol
-              </a>
-              <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                <i class="fab fa-facebook-f fa-fw"></i> Facebook ile Kayıt Ol
-              </a>
-            </form>
-            <hr />
+              <input type="submit" class="btn btn-primary btn-user btn-block" value="Register User">
+              
             <div class="text-center">
               <a class="small" href="forgot-password.html">Şifremi Unuttum?</a>
             </div>
