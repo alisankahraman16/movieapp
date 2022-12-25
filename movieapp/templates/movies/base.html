@@ -12,6 +12,7 @@
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 <body id = "page-top">
+    {% include "partials/_messages.html" %}
     {% block content %}{% endblock%}
 
     <a class="scroll-to-top rounded" href="#page-top">

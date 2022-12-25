@@ -32,14 +32,14 @@ def index(request):
     movies = Movie.objects.filter(is_active=True, is_home=True)
     
     sliders = data["sliders"]
-    return render(request, 'index.html', {
+    return render(request, 'movies/index.html', {
         "movies": movies,
         "sliders": sliders
     })
 
 def movies(request):
     movies = Movie.objects.filter(is_active=True)
-    return render(request, 'movies.html', {
+    return render(request, 'movies/movies.html', {
         "movies": movies
     })
 
@@ -57,7 +57,7 @@ def movie_details(request, slug):
     movie = get_object_or_404(Movie, slug=slug)
     
 
-    return render(request, 'movie_details.html',{
+    return render(request, 'movies/movie_details.html',{
         "movie": movie,
         "genres": movie.genres.all(),
         "people": movie.people.all(),
