@@ -18,24 +18,9 @@
           <span>Filmler</span></a
         >
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="events.html">
-          <i class="fas fa-fw fa-glass-cheers"></i>
-          <span>Olaylar</span></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="people.html">
-          <i class="fas fa-fw fa-users"></i>
-          <span>Topluluk</span></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="sports.html">
-          <i class="fas fa-fw fa-futbol"></i>
-          <span>Sports</span></a
-        >
-      </li>
+      
+     
+     
   
       <hr class="sidebar-divider" />
   
@@ -61,23 +46,11 @@
         >
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bütün Sayfalar</h6>
-            <a class="collapse-item" href="movies.html">Filmler</a>
-            <a class="collapse-item" href="movies-detail.html">Movie Detail</a>
-            <a class="collapse-item" href="events.html">Events</a>
-            <a class="collapse-item" href="events-detail.html">Event Detail</a>
-            <a class="collapse-item" href="people.html">People</a>
-            <a class="collapse-item" href="people-detail.html">People Detail</a>
-            <a class="collapse-item" href="sports.html">Sports</a>
-            <a class="collapse-item" href="sports-detail.html">Sport Detail</a>
+            <a class="collapse-item" href="{% url 'movies_page' %}">Filmler</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="offers.html">
-          <i class="fas fa-fw fa-fire"></i>
-          <span>Offers</span></a
-        >
-      </li>
+      
       <li class="nav-item">
         <a
           class="nav-link collapsed"
@@ -97,16 +70,17 @@
           data-parent="#accordionSidebar"
         >
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Giriş Yap</a>
-            <a class="collapse-item" href="register.html">Kayıt Ol</a>
-            <a class="collapse-item" href="forgot-password.html"
+            <h6 class="collapse-header">Giriş Sayfaları:</h6>
+            <a class="collapse-item" href="{% url 'login' %}">Giriş Yap</a>
+            <a class="collapse-item" href="{% url 'register' %}">Kayıt Ol</a>
+            <a class="collapse-item" href="{% url 'change_password' %}"
               >Şifremi Unuttum</a
             >
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Diğer Sayfalar:</h6>
-            <a class="collapse-item" href="404.html">404 Sayfası</a>
+            <a class="collapse-item" href="{% url 'about' %}">Hakkımızda</a>
             <a class="collapse-item" href="blank.html">Boş Sayfa</a>
+            <a class="collapse-item" href="404.html">404 Sayfası</a>
           </div>
         </div>
       </li>

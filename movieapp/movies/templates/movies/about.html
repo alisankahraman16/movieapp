@@ -2,12 +2,6 @@
 
 {% load static %} 
 
-{% block css_files %}
-
-  <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.min.css' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick-theme.min.css' %}"/>
-
-{% endblock %} 
 
 {% block page_title %} Index {% endblock %} 
 
@@ -24,12 +18,8 @@
       <div class="container-fluid">
         {% include 'partials/_slider.html' %}
 
-        <div class="d-sm-flex align-items-center justify-content-between mt-4 mb-3">
-          <h1 class="h5 mb-0 text-gray-900">Movies</h1>
-          <a href="{% url 'movies_page' %}" class="d-none d-sm-inline-block text-xs"
-            >View All <i class="fas fa-eye fa-sm"></i
-          ></a>
-        </div>
+       <img src="{% static 'img/alisan.jpg' %}" width="200" height="200" alt="alisan kahraman">
+        
 
         <div class="row">
         

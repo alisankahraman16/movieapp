@@ -71,7 +71,7 @@ def change_password(request):
     return render(request, "account/change_password.html", {"form":form})
 
 def watch_list(request):
-    return render(request, 'account/watch-list.html')
+    return render(request, 'account/watch_list.html')
 
 @login_required(login_url='/account/login')
 def profile(request):

@@ -43,6 +43,9 @@ def movies(request):
         "movies": movies
     })
 
+def about(request):
+    return render(request, 'movies/about.html')
+
 def movie_details(request, slug):    
     movie = get_object_or_404(Movie, slug=slug)
     comment_form = CommentForm()
