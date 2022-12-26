@@ -76,6 +76,14 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 
+
+class Slider(models.Model):
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="movies")
+    movie = models.ForeignKey(Movie, on_delete=models.SET_NULL, null=True, blank=True)
+    is_active = models.BooleanField(default=False)
+
+
 class Comment(models.Model):
     full_name = models.CharField(max_length=100)
     email = models.EmailField(default=" ")

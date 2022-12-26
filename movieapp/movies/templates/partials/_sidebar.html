@@ -74,13 +74,13 @@
             <a class="collapse-item" href="{% url 'login' %}">Giriş Yap</a>
             <a class="collapse-item" href="{% url 'register' %}">Kayıt Ol</a>
             <a class="collapse-item" href="{% url 'change_password' %}"
-              >Şifremi Unuttum</a
+              >Parola Değiştir</a
             >
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Diğer Sayfalar:</h6>
             <a class="collapse-item" href="{% url 'about' %}">Hakkımızda</a>
-            <a class="collapse-item" href="blank.html">Boş Sayfa</a>
-            <a class="collapse-item" href="404.html">404 Sayfası</a>
+            <a class="collapse-item" href="{% url 'blank' %}">Boş Sayfa</a>
+            <a class="collapse-item" href="{% url 'page_404' %}">404 Sayfası</a>
           </div>
         </div>
       </li>

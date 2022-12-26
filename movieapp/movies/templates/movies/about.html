@@ -3,7 +3,7 @@
 {% load static %} 
 
 
-{% block page_title %} Index {% endblock %} 
+{% block page_title %} About {% endblock %} 
 
 {% block content %}
 
@@ -18,18 +18,38 @@
       <div class="container-fluid">
         {% include 'partials/_slider.html' %}
 
-       <img src="{% static 'img/alisan.jpg' %}" width="200" height="200" alt="alisan kahraman">
-        
-
-        <div class="row">
-        
-          {% for movie in movies %}
-            <div class="col-xl-3 col-md-6 mb-4">
-              {% include 'partials/_movie.html' %}
-            </div>
-          {% endfor %}
-         
+       
+       <div class="text-center">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <img src="{% static 'img/alisan1.jpg' %}" width="100" height="100" alt="alisan kahraman"><br>
+        <b>Alişan Kahraman-Admin</b><br>
+        <p>Sakarya Uygulamalı Bilimler Üniversitesi 2. Sınıf Bilgisayar Mühendisliği Öğrencisi</p>
         </div>
+        <hr>
+        <div class="text-center">
+          <img src="{% static 'img/logo.png' %}" width="500" height="100" alt="logo">
+          <p><br/>AlisanFlix sitemiz bu yıl içinde kurulmuş olup sitemize ücretsiz üye olacabileceğiniz bir sitedir.
+          <br>Filmlerin özetine,oyuncu listesine ulaşabilirsiniz ve yaptığımız içeriğin doğruluğuna göre de<br/>
+          yorumlayıp yıldızlayabilirsiniz. Sitemiz hala gelişmekte olup seçtiğiniz filmleri "İZLENECEKLER LİSTESİ"<br/>
+          adı altında ileride oluşturacağımız listeye ekleyebileceksiniz.<br/>
+          Şimdilik sevgiyle kalın...
+        </p>
+        </div>
+        <div class="text-center">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>
+                Kişisel Sayfalarım <br>
+                <a target="_blank" href="https://www.instagram.com/alisankhrmnn/?next=%2F">İnstagram</a><br>
+                <a target="_blank" href="https://twitter.com/cokkyaratici?t=2N7mjG4qa--p3mOGvBRmQQ&s=09">Twitter</a><br>                
+                <a href="https://www.linkedin.com/in/ali%C5%9Fan-kahraman-0b5066234" target="_blank">Linkedin</a><br>
+                </span
+                
+              >
+            </div>
+        </div>
+      
       </div>
     </div>
 

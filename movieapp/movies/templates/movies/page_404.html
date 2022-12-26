@@ -1,3 +1,4 @@
+
 {% extends 'movies/base.html' %} 
 
 {% load static %} 
@@ -9,7 +10,7 @@
 
 {% endblock %} 
 
-{% block page_title %} Boş Sayfa {% endblock %} 
+{% block page_title %} 404 {% endblock %} 
 
 {% block content %}
 
@@ -24,22 +25,16 @@
       <div class="container-fluid">
         {% include 'partials/_slider.html' %}
 
-        <div class="d-sm-flex align-items-center justify-content-between mt-4 mb-3">
-          <h1 class="h5 mb-0 text-gray-900">Movies</h1>
-          <a href="{% url 'movies_page' %}" class="d-none d-sm-inline-block text-xs"
-            >View All <i class="fas fa-eye fa-sm"></i
-          ></a>
-        </div>
-
-        <div class="row">
         
-          {% for movie in movies %}
-            <div class="col-xl-3 col-md-6 mb-4">
-              {% include 'partials/_movie.html' %}
-            </div>
-          {% endfor %}
-         
-        </div>
+
+<div class="text-center">
+    <div class="error mx-auto" data-text="404">404</div>
+    <p class="lead text-gray-800 mb-5">Sayfa Bulunamadı</p>
+    <p class="text-gray-500 mb-0">Görünüşe Göre Sayfamızda Bir Eksiklik Bulmuşsunuz...</p>
+    <a href="{% url 'home_page' %}">← Anasayfaya Dön</a>
+    </div>
+    
+        
       </div>
     </div>
 

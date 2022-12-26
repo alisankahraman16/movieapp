@@ -2,8 +2,8 @@
 <div class="osahan-slider">
           {% for slide in sliders %}
             <div class="osahan-slider-item">
-              <a href= "{% url 'movie_details' slide.url %}">
-              <img src="{{ slide.slider_image.url }}" class="img-fluid rounded" 
+              <a href= "{% url 'movie_details' slide.movie.slug %}" title="{{ slide.title }}">
+              <img src="{{ slide.image.url }}" class="img-fluid rounded" 
               alt="..."/>
             </a>
             </div>

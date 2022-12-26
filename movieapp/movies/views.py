@@ -1,37 +1,17 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from datetime import date
-from movies.models import Movie
+from movies.models import Movie, Slider
 from movies.forms import CommentForm
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse
-
-data = {
-
-    "sliders": [
-        {
-            "slider_image": "slider1.jpg",
-            "url":"film-adi-1"
-        },
-        {
-            "slider_image": "slider2.jpg",
-            "url": "film-adi-2"
-        },
-        {
-            "slider_image": "slider3.jpg",
-            "url": "film-adi-3"
-        },
-
-    ],
-}
-
 
 # Create your views here.
 
 def index(request):
     movies = Movie.objects.filter(is_active=True, is_home=True)
     
-    sliders = data["sliders"]
+    sliders = Slider.objects.filter(is_active = True)
     return render(request, 'movies/index.html', {
         "movies": movies,
         "sliders": sliders
@@ -45,6 +25,12 @@ def movies(request):
 
 def about(request):
     return render(request, 'movies/about.html')
+
+def page_404(request):
+    return render(request, "movies/page_404.html")
+
+def blank(request):
+    return render(request, "movies/blank.html")
 
 def movie_details(request, slug):    
     movie = get_object_or_404(Movie, slug=slug)
