@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('login', views.login_request, name="login"),
@@ -9,4 +11,5 @@ urlpatterns = [
     path('change-password', views.change_password, name="change_password"),
     path('profile', views.profile, name="profile"),
     path('watch-list', views.watch_list, name="watch_list"),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
